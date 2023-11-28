@@ -5,16 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.abmtech.trading.R;
-import com.abmtech.trading.databinding.ActivityDashboardBinding;
+import com.abmtech.trading.databinding.ActivitySignupBinding;
 
-public class DashboardActivity extends AppCompatActivity {
-    private ActivityDashboardBinding binding;
+public class SignupActivity extends AppCompatActivity {
+    private ActivitySignupBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityDashboardBinding.inflate(getLayoutInflater());
+        binding = ActivitySignupBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
 
     }
 }
