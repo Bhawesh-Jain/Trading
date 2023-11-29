@@ -1,14 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:id="@+id/header">
+
+
+        </RelativeLayout>
+
+        <ImageView
+            android:visibility="gone"
+            android:layout_below="@id/header"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_400sdp"
+            android:src="@drawable/image_bg_dashboard"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/app_name" />
+        
+        <LinearLayout
+            android:background="@color/black"
+            android:layout_below="@id/header"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingVertical="@dimen/_15sdp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt_bold"
+                android:text="Advance Your Business"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_22ssp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_30sdp"
+                android:src="@drawable/ic_divider"
+                app:tint="@color/white"
+                android:contentDescription="@string/app_name" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt_regular"
+                android:text="Algorithmic trading, also known as automated trading, black-box trading, or algo-trading, involves placing a deal using a computer program that adheres to a predetermined set of guidelines Theoretically, the deal can produce profits at a pace and frequency that are beyond the capabilities of a human trader."
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:textSize="@dimen/_10ssp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:padding="@dimen/_20sdp"
+                android:id="@+id/ll_login_redirect"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/prompt_regular"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:layout_marginHorizontal="@dimen/_20sdp"
+                    android:textSize="@dimen/_10ssp" />
+
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/prompt_regular"
+                    android:layout_gravity="center"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:layout_marginHorizontal="@dimen/_20sdp"
+                    android:textSize="@dimen/_10ssp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>
