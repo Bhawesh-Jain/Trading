@@ -32,10 +32,12 @@ public class DashboardActivity extends AppCompatActivity {
             } else return false;
         });
 
+        changeFragment(new HomeFragment());
+
     }
 
     private void changeFragment(Fragment fragment) {
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction().add(binding.container.getId(), fragment);
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction().replace(binding.container.getId(), fragment);
 
         ft.commit();
     }

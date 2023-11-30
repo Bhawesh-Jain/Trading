@@ -2,6 +2,7 @@ package com.abmtech.trading.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.abmtech.trading.R;
@@ -16,5 +17,6 @@ public class LoginActivity extends AppCompatActivity {
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        binding.textLogin.setOnClickListener(v -> startActivity(new Intent(this, DashboardActivity.class)));
     }
 }

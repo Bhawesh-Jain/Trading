@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.HomeFragment">
 
     <RelativeLayout
@@ -11,87 +11,213 @@
         android:layout_height="wrap_content">
 
         <RelativeLayout
+            android:id="@+id/header"
+            android:background="@color/black"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:id="@+id/header">
+            android:layout_height="?attr/actionBarSize">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/prompt_bold"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_16ssp" />
 
         </RelativeLayout>
 
         <ImageView
-            android:visibility="gone"
-            android:layout_below="@id/header"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_400sdp"
-            android:src="@drawable/image_bg_dashboard"
-            android:scaleType="centerCrop"
-            android:contentDescription="@string/app_name" />
-        
-        <LinearLayout
-            android:background="@color/black"
             android:layout_below="@id/header"
+            android:contentDescription="@string/app_name"
+            android:scaleType="centerCrop"
+            android:src="@drawable/image_bg_dashboard"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/top_ll"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingVertical="@dimen/_15sdp"
+            android:layout_below="@id/header"
+            android:background="@color/black"
+            android:orientation="vertical"
+            android:paddingVertical="@dimen/_5sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/prompt_bold"
+                android:text="Advance Your Business"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_22ssp" />
+
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_30sdp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_divider"
+                app:tint="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:fontFamily="@font/prompt_regular"
+                android:gravity="center"
+                android:text="Algorithmic trading, also known as automated trading, black-box trading, or algo-trading, involves placing a deal using a computer program that adheres to a predetermined set of guidelines Theoretically, the deal can produce profits at a pace and frequency that are beyond the capabilities of a human trader."
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10ssp" />
+
+            <LinearLayout
+                android:id="@+id/ll_login_redirect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/_20sdp"
+                android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/text_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_20sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_background_empty"
+                    android:fontFamily="@font/prompt_regular"
+                    android:gravity="center"
+                    android:padding="@dimen/_10sdp"
+                    android:text="Login"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_10ssp" />
+
+                <TextView
+                    android:id="@+id/text_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="@dimen/_20sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_background_empty"
+                    android:fontFamily="@font/prompt_regular"
+                    android:gravity="center"
+                    android:padding="@dimen/_10sdp"
+                    android:text="Register"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_10ssp" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_marginStart="@dimen/_60sdp"
+                android:src="@drawable/ic_home_banner" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_below="@id/top_ll"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/prompt_bold"
-                android:text="Advance Your Business"
                 android:layout_gravity="center"
-                android:textColor="@color/white"
-                android:textSize="@dimen/_22ssp" />
+                android:fontFamily="@font/prompt_medium"
+                android:text="Live Market"
+                android:textColor="@color/red"
+                android:textSize="@dimen/_20ssp" />
 
             <ImageView
+                android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/_30sdp"
+                android:contentDescription="@string/app_name"
                 android:src="@drawable/ic_divider"
-                app:tint="@color/white"
-                android:contentDescription="@string/app_name" />
+                app:tint="@color/color_primary" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/price_recycler"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/prompt_medium"
+                android:text="About Us"
+                android:textColor="@color/red"
+                android:textSize="@dimen/_20ssp" />
+
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_30sdp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_divider"
+                app:tint="@color/color_primary" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_120sdp"
+                android:src="@drawable/ic_login" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/prompt_regular"
-                android:text="Algorithmic trading, also known as automated trading, black-box trading, or algo-trading, involves placing a deal using a computer program that adheres to a predetermined set of guidelines Theoretically, the deal can produce profits at a pace and frequency that are beyond the capabilities of a human trader."
                 android:layout_gravity="center"
-                android:textColor="@color/white"
-                android:gravity="center"
                 android:layout_marginHorizontal="@dimen/_20sdp"
+                android:fontFamily="@font/prompt_regular"
+                android:gravity="center"
+                android:text="This is a rapidly expanding financial services platform in India where customers may find hassle-free investing options for mutual funds, equities, US equities, ETFs, IPOs, and F&amp;Os. "
+                android:textColor="@color/black"
                 android:textSize="@dimen/_10ssp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
+
+            <TextView
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:weightSum="2"
-                android:padding="@dimen/_20sdp"
-                android:id="@+id/ll_login_redirect"
-                android:orientation="horizontal">
+                android:layout_gravity="center"
+                android:fontFamily="@font/prompt_medium"
+                android:text="Services"
+                android:textColor="@color/red"
+                android:textSize="@dimen/_20ssp" />
 
-                <TextView
-                    android:layout_weight="1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/prompt_regular"
-                    android:textColor="@color/white"
-                    android:gravity="center"
-                    android:layout_marginHorizontal="@dimen/_20sdp"
-                    android:textSize="@dimen/_10ssp" />
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_30sdp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_divider"
+                app:tint="@color/color_primary" />
 
-                <TextView
-                    android:layout_weight="1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/prompt_regular"
-                    android:layout_gravity="center"
-                    android:textColor="@color/white"
-                    android:gravity="center"
-                    android:layout_marginHorizontal="@dimen/_20sdp"
-                    android:textSize="@dimen/_10ssp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/prompt_medium"
+                android:text="Trading app provides various services"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp" />
 
-            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_marginTop="@dimen/_10sdp"
+                android:id="@+id/service_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
         </LinearLayout>
 

@@ -47,7 +47,7 @@ public class SplashActivity extends AppCompatActivity {
                             init(count + 1);
                         } else {
                             new Handler().postDelayed(() -> {
-                                startActivity(new Intent(activity, LoginActivity.class));
+                                startActivity(new Intent(activity, DashboardActivity.class));
                                 finish();
                             }, SPLASH_TIMER);
                             Log.d(TAG, "onComplete() called with: task = [" + task + "]");

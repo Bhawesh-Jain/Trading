@@ -5,12 +5,14 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.abmtech.trading.R;
+import com.abmtech.trading.adapter.TransactionAdapter;
 import com.abmtech.trading.databinding.FragmentTransactionBinding;
 
 public class TransactionFragment extends Fragment {
@@ -27,6 +29,9 @@ public class TransactionFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        binding.recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        binding.recyclerView.setAdapter(new TransactionAdapter());
 
     }
 }
