@@ -17,18 +17,19 @@
             android:layout_height="?attr/actionBarSize">
 
             <ImageView
+                android:contentDescription="@string/back_button"
+                android:id="@+id/image_back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_back"
                 android:layout_centerVertical="true"
                 android:padding="@dimen/_10sdp"
-                android:id="@+id/image_back" />
+                android:src="@drawable/ic_back" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
                 android:layout_centerInParent="true"
+                android:layout_gravity="center"
                 android:fontFamily="@font/prompt_bold"
                 android:text="@string/signup"
                 android:textColor="@color/black"
@@ -46,10 +47,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/_5sdp"
-                android:drawableLeft="@drawable/userprofile"
-                android:text="   First Name"
+                android:text="@string/first_name"
+                android:drawablePadding="@dimen/_5sdp"
                 android:textColor="@color/black"
-                android:textSize="@dimen/_10sdp" />
+                android:textSize="@dimen/_10sdp"
+                app:drawableLeftCompat="@drawable/userprofile" />
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -61,24 +63,25 @@
                 android:background="@drawable/background_white">
 
                 <EditText
-                    android:id="@+id/edt_name"
+                    android:id="@+id/edt_f_name"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@null"
                     android:fontFamily="@font/prompt_medium"
                     android:hint="First Name"
+                    android:inputType="textCapWords"
                     android:padding="@dimen/_10sdp"
-
                     android:singleLine="true"
                     android:textColorHint="@color/gray_m"
                     android:textSize="@dimen/_10sdp" />
+
             </RelativeLayout>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/_5sdp"
-                android:drawableLeft="@drawable/userprofile"
+                app:drawableLeftCompat="@drawable/userprofile"
                 android:text="  Last Name"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_10sdp" />
@@ -93,23 +96,25 @@
                 android:background="@drawable/background_white">
 
                 <EditText
-                    android:id="@+id/edt_last_name"
+                    android:id="@+id/edt_l_name"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@null"
                     android:fontFamily="@font/prompt_medium"
                     android:hint="Last Name"
+                    android:inputType="textCapWords"
                     android:padding="@dimen/_10sdp"
                     android:singleLine="true"
                     android:textColorHint="@color/gray_m"
                     android:textSize="@dimen/_10sdp" />
+                
             </RelativeLayout>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/_5sdp"
-                android:drawableLeft="@drawable/email"
+                app:drawableLeftCompat="@drawable/email"
                 android:text="  Email"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_10sdp" />
@@ -136,13 +141,14 @@
                     android:singleLine="true"
                     android:textColorHint="@color/gray_m"
                     android:textSize="@dimen/_10sdp" />
+                
             </RelativeLayout>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/_5sdp"
-                android:drawableLeft="@drawable/call"
+                app:drawableLeftCompat="@drawable/call"
                 android:text="  Phone Number"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_10sdp" />
@@ -168,6 +174,7 @@
                     android:singleLine="true"
                     android:textColorHint="@color/gray_m"
                     android:textSize="@dimen/_10sdp" />
+                
             </RelativeLayout>
 
             <TextView
@@ -195,6 +202,7 @@
                     android:background="@null"
                     android:fontFamily="@font/prompt_medium"
                     android:hint="Aadhar Number"
+                    android:inputType="number"
                     android:padding="@dimen/_10sdp"
                     android:singleLine="true"
                     android:textColorHint="@color/gray_m"
@@ -206,7 +214,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/_5sdp"
-                android:drawableLeft="@drawable/calendar"
+                app:drawableLeftCompat="@drawable/calendar"
                 android:text="  Date Of Birth"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_10sdp" />
@@ -220,8 +228,8 @@
                 android:layout_marginBottom="@dimen/_5sdp"
                 android:background="@drawable/background_white">
 
-                <EditText
-                    android:id="@+id/edt_dob"
+                <TextView
+                    android:id="@+id/text_dob"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@null"
@@ -231,13 +239,14 @@
                     android:singleLine="true"
                     android:textColorHint="@color/gray_m"
                     android:textSize="@dimen/_10sdp" />
+                
             </RelativeLayout>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/_5sdp"
-                android:drawableLeft="@drawable/userprofile"
+                app:drawableLeftCompat="@drawable/userprofile"
                 android:text="  Nominee Name"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_10sdp" />
@@ -252,24 +261,26 @@
                 android:background="@drawable/background_white">
 
                 <EditText
+                    android:id="@+id/edt_nominee_name"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:autofillHints="name"
                     android:background="@null"
                     android:fontFamily="@font/prompt_medium"
                     android:hint="Nominee Name"
-                    android:inputType="none"
+                    android:inputType="textCapWords"
                     android:padding="@dimen/_10sdp"
                     android:singleLine="true"
                     android:textColorHint="@color/gray_m"
                     android:textSize="@dimen/_10sdp" />
+                
             </RelativeLayout>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/_5sdp"
-                android:drawableLeft="@drawable/calendar"
+                app:drawableLeftCompat="@drawable/calendar"
                 android:text="  Nominee Date of Birth"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_10sdp" />
@@ -283,7 +294,8 @@
                 android:layout_marginBottom="@dimen/_5sdp"
                 android:background="@drawable/background_white">
 
-                <EditText
+                <TextView
+                    android:id="@+id/text_nominee_dob"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@null"
@@ -314,23 +326,26 @@
                 android:background="@drawable/background_white">
 
                 <EditText
+                    android:id="@+id/edt_nominee_relation"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@null"
                     android:fontFamily="@font/prompt_medium"
                     android:hint="Nominee Relation"
+                    android:inputType="textCapWords"
                     android:padding="@dimen/_10sdp"
                     android:singleLine="true"
                     android:textColorHint="@color/gray_m"
                     android:textSize="@dimen/_10sdp" />
+                
             </RelativeLayout>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/_5sdp"
-                android:drawableLeft="@drawable/pancard"
-                android:text="  Pan card"
+                app:drawableLeftCompat="@drawable/pancard"
+                android:text="  Pan Number"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_10sdp" />
 
@@ -344,22 +359,25 @@
                 android:background="@drawable/background_white">
 
                 <EditText
+                    android:id="@+id/edt_pan_number"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@null"
                     android:fontFamily="@font/prompt_medium"
-                    android:hint="Pen card"
+                    android:hint="Pan Number"
+                    android:inputType="textCapCharacters"
                     android:padding="@dimen/_10sdp"
                     android:singleLine="true"
                     android:textColorHint="@color/gray_m"
                     android:textSize="@dimen/_10sdp" />
+                
             </RelativeLayout>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/_5sdp"
-                android:drawableLeft="@drawable/lock"
+                app:drawableLeftCompat="@drawable/lock"
                 android:text="  Password"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_10sdp" />
@@ -374,6 +392,7 @@
                 android:background="@drawable/background_white">
 
                 <EditText
+                    android:id="@+id/edt_password"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="@dimen/_5sdp"
@@ -386,13 +405,14 @@
                     android:singleLine="true"
                     android:textColorHint="@color/gray_m"
                     android:textSize="@dimen/_10sdp" />
+
             </RelativeLayout>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/_5sdp"
-                android:drawableLeft="@drawable/gender"
+                app:drawableLeftCompat="@drawable/gender"
                 android:text="  Gender"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_10sdp" />
@@ -407,20 +427,24 @@
                 android:orientation="vertical">
 
                 <RadioGroup
+                    android:id="@+id/radio_group"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
                     <RadioButton
+                        android:id="@+id/radio_male"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Male" />
 
                     <RadioButton
+                        android:id="@+id/radio_female"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Female" />
 
                     <RadioButton
+                        android:id="@+id/radio_other"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Other" />
@@ -433,7 +457,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/_5sdp"
-                android:drawableLeft="@drawable/location"
+                app:drawableLeftCompat="@drawable/location"
                 android:text="  Address"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_10sdp" />
@@ -445,21 +469,23 @@
                 android:layout_marginTop="@dimen/_5sdp"
                 android:layout_marginEnd="@dimen/_8sdp"
                 android:layout_marginBottom="@dimen/_5sdp"
-
                 android:background="@drawable/background_white">
 
                 <EditText
+                    android:id="@+id/edt_address"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:autofillHints="postalAddress"
                     android:background="@null"
                     android:fontFamily="@font/prompt_medium"
+                    android:gravity="top|start"
                     android:hint=" "
-                    android:inputType="textPostalAddress"
+                    android:inputType="textPostalAddress|textMultiLine"
                     android:padding="@dimen/_30sdp"
                     android:singleLine="true"
                     android:textColorHint="@color/gray_m"
                     android:textSize="@dimen/_10sdp" />
+
             </RelativeLayout>
 
             <TextView
@@ -480,17 +506,19 @@
                 android:background="@drawable/background_white">
 
                 <EditText
+                    android:id="@+id/edt_bank_name"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:autofillHints="text"
                     android:background="@null"
                     android:fontFamily="@font/prompt_medium"
                     android:hint="Bank Name "
-                    android:inputType="text"
+                    android:inputType="textCapWords"
                     android:padding="@dimen/_10sdp"
                     android:singleLine="true"
                     android:textColorHint="@color/gray_m"
                     android:textSize="@dimen/_10sdp" />
+
             </RelativeLayout>
 
             <TextView
@@ -511,17 +539,19 @@
                 android:background="@drawable/background_white">
 
                 <EditText
+                    android:id="@+id/edt_acc_number"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:autofillHints="text"
                     android:background="@null"
                     android:fontFamily="@font/prompt_medium"
                     android:hint="Account Number"
-                    android:inputType="text"
+                    android:inputType="number"
                     android:padding="@dimen/_10sdp"
                     android:singleLine="true"
                     android:textColorHint="@color/gray_m"
                     android:textSize="@dimen/_10sdp" />
+
             </RelativeLayout>
 
             <TextView
@@ -542,6 +572,7 @@
                 android:background="@drawable/background_white">
 
                 <EditText
+                    android:id="@+id/edt_acc_holder"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:autofillHints="name"
@@ -574,59 +605,31 @@
                 android:background="@drawable/background_white">
 
                 <EditText
+                    android:id="@+id/edt_ifsc_code"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@null"
                     android:fontFamily="@font/prompt_medium"
                     android:hint="ISFC Code "
+                    android:inputType="text"
                     android:padding="@dimen/_10sdp"
                     android:singleLine="true"
                     android:textColorHint="@color/gray_m"
                     android:textSize="@dimen/_10sdp" />
+
             </RelativeLayout>
 
             <TextView
+                android:id="@+id/text_continue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_5sdp"
-                android:text="Refarel Id"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_10sdp" />
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:layout_marginTop="@dimen/_5sdp"
-                android:layout_marginEnd="@dimen/_8sdp"
-                android:layout_marginBottom="@dimen/_5sdp"
-                android:background="@drawable/background_white">
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:autofillHints="emailAddress"
-                    android:background="@null"
-                    android:fontFamily="@font/prompt_medium"
-                    android:hint="Referral Id"
-                    android:inputType="textEmailAddress"
-                    android:padding="@dimen/_10sdp"
-                    android:singleLine="true"
-                    android:textColorHint="@color/gray_m"
-                    android:textSize="@dimen/_10sdp" />
-            </RelativeLayout>
-
-            <TextView
-                android:id="@+id/text_login"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
                 android:layout_marginTop="@dimen/_25sdp"
                 android:background="@drawable/button_background"
                 android:fontFamily="@font/prompt_bold"
                 android:gravity="center"
                 android:paddingHorizontal="@dimen/_10sdp"
                 android:paddingVertical="@dimen/_13sdp"
-                android:layout_marginHorizontal="@dimen/_15sdp"
                 android:text="@string/continue_"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_14sdp" />
@@ -634,4 +637,5 @@
         </LinearLayout>
 
     </LinearLayout>
+
 </ScrollView>
