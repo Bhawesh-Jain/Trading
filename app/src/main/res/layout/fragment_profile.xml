@@ -34,6 +34,7 @@
             <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_width="@dimen/_100sdp"
                 android:layout_marginTop="@dimen/_10sdp"
+                android:id="@+id/profile_image"
                 android:layout_gravity="center"
                 android:layout_height="@dimen/_100sdp"
                 android:src="@drawable/image5" />
@@ -51,10 +52,12 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/prompt_medium"
                     android:text="Matilda gray"
+                    android:id="@+id/text_name"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_12sdp" />
 
                 <TextView
+                    android:id="@+id/text_email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/prompt_regular"
@@ -67,7 +70,7 @@
 
         </LinearLayout>
         <RelativeLayout
-            android:id="@+id/setting_txt"
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <LinearLayout
@@ -181,6 +184,7 @@
                 app:tint="@color/gray" />
         </RelativeLayout>
         <RelativeLayout
+            android:id="@+id/rl_add_funds"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -221,6 +225,7 @@
                 app:tint="@color/gray" />
         </RelativeLayout>
         <RelativeLayout
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -304,6 +309,7 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/rl_logout"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 

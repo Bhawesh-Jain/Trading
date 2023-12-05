@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
+import com.abmtech.trading.ui.DashboardActivity;
 import com.abmtech.trading.ui.LoginActivity;
 
 public class Session {
@@ -165,7 +166,7 @@ public class Session {
     }
 
     public void logout() {
-        _context.startActivity(new Intent(_context, LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK));
+        _context.startActivity(new Intent(_context, DashboardActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK));
         editor.clear();
         editor.apply();
     }

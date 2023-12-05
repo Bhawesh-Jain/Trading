@@ -51,9 +51,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/prompt_regular"
-                    android:text="Paid "
                     android:textColor="@color/black"
-                    android:textFontWeight="300"
                     android:textSize="@dimen/_13sdp" />
 
                 <TextView
@@ -61,7 +59,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/prompt_regular"
-                    android:text="Amount: $ 5698"
                     android:textAlignment="textEnd"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_10sdp" />
@@ -73,7 +70,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/prompt_regular"
-                android:text="Plan Name "
                 android:textColor="@color/black"
                 android:textSize="@dimen/_10sdp" />
 
@@ -81,7 +77,6 @@
                 android:id="@+id/text_transaction_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Transaction Id: ashdfu34y7iuf387hn"
                 android:fontFamily="@font/prompt_regular"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_10sdp" />
@@ -89,7 +84,6 @@
             <TextView
                 android:id="@+id/text_transaction_status"
                 android:layout_width="match_parent"
-                android:text="Status: COMPLETED!"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/prompt_regular"
                 android:textColor="@color/black"
@@ -105,7 +99,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_5sdp"
         android:fontFamily="@font/prompt_regular"
-        android:text="Date: 28-11-2023 11:44"
         android:textColor="@color/black"
         android:textSize="@dimen/_10sdp" />
 
