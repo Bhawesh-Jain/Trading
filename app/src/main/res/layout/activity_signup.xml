@@ -481,8 +481,8 @@
                     android:gravity="top|start"
                     android:hint=" "
                     android:inputType="textPostalAddress|textMultiLine"
-                    android:padding="@dimen/_30sdp"
-                    android:singleLine="true"
+                    android:padding="@dimen/_10sdp"
+                    android:lines="5"
                     android:textColorHint="@color/gray_m"
                     android:textSize="@dimen/_10sdp" />
 

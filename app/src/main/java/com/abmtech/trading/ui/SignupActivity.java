@@ -1,18 +1,22 @@
 package com.abmtech.trading.ui;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.abmtech.trading.R;
 import com.abmtech.trading.databinding.ActivitySignupBinding;
 import com.abmtech.trading.utils.ProgressDialog;
 import com.abmtech.trading.utils.Session;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -38,6 +42,19 @@ public class SignupActivity extends AppCompatActivity {
         binding.imageBack.setOnClickListener(v -> onBackPressed());
 
         binding.textContinue.setOnClickListener(v -> validate());
+
+        binding.radioGroup.setOnCheckedChangeListener((radioGroup, i) -> {
+            if (radioGroup.getCheckedRadioButtonId() == R.id.radio_male) {
+                gender = "male";
+            } else if (radioGroup.getCheckedRadioButtonId() == R.id.radio_female) {
+                gender = "female";
+            } else if (radioGroup.getCheckedRadioButtonId() == R.id.radio_other) {
+                gender = "other";
+            }
+        });
+
+        binding.textDob.setOnClickListener(view -> showDatePickerDialog(binding.textDob));
+        binding.textNomineeDob.setOnClickListener(view -> showDatePickerDialog(binding.textNomineeDob));
     }
 
     private void validate() {
@@ -95,6 +112,8 @@ public class SignupActivity extends AppCompatActivity {
     }
 
     private void signup() {
+        pd.show();
+
         String edtFName = binding.edtFName.getText().toString();
         String edtLName = binding.edtLName.getText().toString();
         String edtEmail = binding.edtEmail.getText().toString();
@@ -151,7 +170,10 @@ public class SignupActivity extends AppCompatActivity {
                         session.setUserName(name);
                         session.setType("user");
 
-                        startActivity(new Intent(SignupActivity.this, DashboardActivity.class));
+                        startActivity(new Intent(SignupActivity.this, DashboardActivity.class)
+                                .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK));
+
+                        Toast.makeText(this, "Account Created!", Toast.LENGTH_SHORT).show();
                     } else {
                         Log.e("TAG", "Error adding document", task.getException());
                     }
@@ -160,5 +182,20 @@ public class SignupActivity extends AppCompatActivity {
                     pd.dismiss();
                     Log.e("TAG", "onFailure: Signup", e);
                 });
+    }
+
+    public void showDatePickerDialog(TextView textView) {
+        final Calendar c = Calendar.getInstance();
+        int year = c.get(Calendar.YEAR);
+        int month = c.get(Calendar.MONTH);
+        int day = c.get(Calendar.DAY_OF_MONTH);
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(this,
+                (view, year1, monthOfYear, dayOfMonth) -> {
+                    String selectedDate = dayOfMonth + "-" + (monthOfYear + 1) + "-" + year1;
+                    textView.setText(selectedDate);
+                }, year, month, day);
+
+        datePickerDialog.show();
     }
 }

@@ -19,14 +19,16 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
                 android:layout_centerInParent="true"
+                android:layout_gravity="center"
                 android:fontFamily="@font/prompt_bold"
                 android:text="@string/app_name"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_16ssp" />
 
         </RelativeLayout>
+
+
 
         <ImageView
             android:layout_width="match_parent"
@@ -42,7 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/header"
-            android:background="@color/black"
+            android:background="@color/silver"
             android:orientation="vertical"
             android:paddingVertical="@dimen/_5sdp">
 
@@ -52,7 +54,7 @@
                 android:layout_gravity="center"
                 android:fontFamily="@font/prompt_bold"
                 android:text="Advance Your Business"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="@dimen/_22ssp" />
 
             <ImageView
@@ -61,7 +63,7 @@
                 android:layout_height="@dimen/_30sdp"
                 android:contentDescription="@string/app_name"
                 android:src="@drawable/ic_divider"
-                app:tint="@color/white" />
+                app:tint="@color/red" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -71,7 +73,7 @@
                 android:fontFamily="@font/prompt_regular"
                 android:gravity="center"
                 android:text="Algorithmic trading, also known as automated trading, black-box trading, or algo-trading, involves placing a deal using a computer program that adheres to a predetermined set of guidelines Theoretically, the deal can produce profits at a pace and frequency that are beyond the capabilities of a human trader."
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="@dimen/_10ssp" />
 
             <LinearLayout
