@@ -57,6 +57,7 @@
                 android:fontFamily="@font/prompt_regular"
                 android:text="15 Golden Years in Treading"
                 android:textColor="@color/black"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:textSize="@dimen/_10ssp" />
             <LinearLayout
                 android:id="@+id/ll_login_redirect"
@@ -95,7 +96,7 @@
                     android:fontFamily="@font/prompt_regular"
                     android:gravity="center"
                     android:padding="@dimen/_10sdp"
-                    android:text="Register"
+                    android:text="Open Account"
                     android:textStyle="bold"
                     android:textColor="@color/blue"
                     android:textSize="@dimen/_15ssp" />
@@ -136,6 +137,7 @@
                 android:layout_marginHorizontal="@dimen/_20sdp"
                 android:fontFamily="@font/prompt_regular"
                 android:gravity="center"
+                android:layout_marginVertical="@dimen/_15sdp"
                 android:text="Algorithmic trading, also known as automated trading, black-box trading, or algo-trading, involves placing a deal using a computer program that adheres to a predetermined set of guidelines Theoretically, the deal can produce profits at a pace and frequency that are beyond the capabilities of a human trader."
                 android:textColor="@color/black"
                 android:textSize="@dimen/_10ssp" />
