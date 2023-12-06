@@ -104,7 +104,7 @@
                 android:layout_height="@dimen/_250sdp"
                 android:background="@drawable/custom_bg_edit_rounded"
                 android:padding="@dimen/_30sdp"
-                android:src="@color/black" />
+                android:src="@drawable/qr_cod" />
 
         </LinearLayout>
 

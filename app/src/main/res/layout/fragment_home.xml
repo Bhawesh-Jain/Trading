@@ -59,7 +59,7 @@
                 android:text="15 Golden Years in Treading"
                 android:textColor="@color/black"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:textSize="@dimen/_10ssp" />
+                android:textSize="@dimen/_12ssp" />
             <LinearLayout
                 android:id="@+id/ll_login_redirect"
                 android:layout_width="match_parent"
@@ -242,7 +242,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:fontFamily="@font/prompt_medium"
-                android:text="Trading app provides various services"
+                android:text="FxGrow app provides various services"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_12ssp" />
 
@@ -251,6 +251,40 @@
                 android:id="@+id/service_recycler"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/prompt_medium"
+                android:text="ISO Certified"
+                android:textColor="@color/red"
+                android:textSize="@dimen/_20ssp" />
+
+
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_30sdp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_divider"
+                app:tint="@color/color_primary" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/prompt_medium"
+                android:text="FxGrow app is ISO Certified"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp" />
+
+            <ImageView
+                android:id="@+id/ic_certified"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_170sdp"
+                android:src="@drawable/ic_iso" />
 
         </LinearLayout>
 

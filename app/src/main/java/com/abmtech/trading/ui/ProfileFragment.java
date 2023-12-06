@@ -4,6 +4,7 @@ import static com.abmtech.trading.utils.Constants.bitmapToBase64;
 import static com.abmtech.trading.utils.Constants.decodeImage;
 import static com.abmtech.trading.utils.Constants.getCurrentTimeStamp;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
@@ -71,6 +72,9 @@ public class ProfileFragment extends Fragment {
 
         binding.rlAddFunds.setOnClickListener(v -> addFunds());
         binding.rlLogout.setOnClickListener(v -> session.logout());
+        binding.rlCompliance.setOnClickListener(v -> startActivity(new Intent(getContext(), ComplianceActivity.class)));
+        binding.rlContactUs.setOnClickListener(v -> startActivity(new Intent(getContext(), ContactUsActivity.class)));
+        binding.idAboutUs.setOnClickListener(v -> startActivity(new Intent(getContext(), AboutUsActivity.class)));
 
         binding.textEmail.setText(session.getEmail());
         binding.textName.setText(session.getUserName());

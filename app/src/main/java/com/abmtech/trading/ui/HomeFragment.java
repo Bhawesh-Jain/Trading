@@ -24,7 +24,9 @@ import com.abmtech.trading.adapter.LivePricesAdapter;
 import com.abmtech.trading.adapter.ServicesAdapter;
 import com.abmtech.trading.databinding.FragmentHomeBinding;
 import com.abmtech.trading.model.PriceModel;
+import com.abmtech.trading.model.ServiceModel;
 import com.abmtech.trading.utils.ProgressDialog;
+import com.abmtech.trading.utils.Session;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -60,13 +62,16 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        Session session = new Session(getContext());
+
+        if (session.isLoggedIn()) binding.llLoginRedirect.setVisibility(View.GONE);
+
+        binding.icCertified.setOnClickListener(v -> startActivity(new Intent(getContext(), ComplianceActivity.class)));
         binding.textLogin.setOnClickListener(v -> startActivity(new Intent(getContext(), LoginActivity.class)));
         binding.textRegister.setOnClickListener(v -> startActivity(new Intent(getContext(), SignupActivity.class)));
         getTransaction();
-
-        binding.serviceRecycler.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
-        binding.serviceRecycler.setAdapter(new ServicesAdapter());
-
+        getServices();
     }
 
     private void getTransaction() {
@@ -93,7 +98,7 @@ public class HomeFragment extends Fragment {
                                     public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
                                         super.onScrolled(recyclerView, dx, dy);
                                         int lastItem = layoutManager.findLastCompletelyVisibleItemPosition();
-                                        if(lastItem == layoutManager.getItemCount()-1){
+                                        if (lastItem == layoutManager.getItemCount() - 1) {
                                             mHandler.removeCallbacks(SCROLLING_RUNNABLE);
                                             Handler postHandler = new Handler();
                                             postHandler.postDelayed(() -> {
@@ -107,6 +112,32 @@ public class HomeFragment extends Fragment {
 
                             } else {
                                 Toast.makeText(getContext(), "No transaction found!", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    } else {
+                        Log.e(TAG, "Error =>", task.getException());
+                        pd.dismiss();
+                    }
+                });
+    }
+
+    private void getServices() {
+        CollectionReference ref = db.collection("services");
+
+        ref.get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        pd.dismiss();
+                        if (task.getResult().isEmpty()) {
+                            Toast.makeText(getContext(), "No Services Found!", Toast.LENGTH_SHORT).show();
+                        } else {
+                            List<ServiceModel> data = task.getResult().toObjects(ServiceModel.class);
+
+                            if (data.size() > 0) {
+                                binding.serviceRecycler.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+                                binding.serviceRecycler.setAdapter(new ServicesAdapter(data, getContext()));
+                            } else {
+                                Toast.makeText(getContext(), "No Services found!", Toast.LENGTH_SHORT).show();
                             }
                         }
                     } else {

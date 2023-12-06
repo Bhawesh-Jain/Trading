@@ -112,6 +112,7 @@
 
 
         <RelativeLayout
+            android:id="@+id/id_about_us"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -144,6 +145,7 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/rl_contact_us"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -267,6 +269,7 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/rl_compliance"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
