@@ -102,6 +102,8 @@ public class ProfileFragment extends Fragment {
     }
 
     private void addTransaction(String transactionId, String transactionAmount, BottomSheetDialog dialog) {
+        pd.show();
+
         Map<String, Object> map = new HashMap<>();
 
         map.put("userId", session.getUserId());

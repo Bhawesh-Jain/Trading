@@ -31,6 +31,7 @@
                 android:padding="@dimen/_5sdp">
 
                 <TextView
+                    android:id="@+id/text_heading"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="EUR/CHF"
@@ -38,6 +39,7 @@
                     android:textSize="@dimen/_10sdp" />
 
                 <TextView
+                    android:id="@+id/text_sub_heading"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="EUR/CHF"
@@ -55,6 +57,7 @@
                 android:padding="@dimen/_5sdp">
 
                 <TextView
+                    android:id="@+id/text_head_price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0.98765"
@@ -84,6 +87,7 @@
                     android:textColor="@color/gray" />
 
                 <TextView
+                    android:id="@+id/text_ask_price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0.98765"
@@ -104,6 +108,7 @@
                     android:textColor="@color/gray" />
 
                 <TextView
+                    android:id="@+id/text_bid_price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0.98765"
