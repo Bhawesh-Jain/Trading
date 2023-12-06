@@ -30,6 +30,10 @@ public class DashboardActivity extends AppCompatActivity {
                 if (session.isLoggedIn()) changeFragment(new TransactionFragment());
                 else login();
                 return true;
+            }  else if (item.getItemId() == R.id.nav_loan) {
+                if (session.isLoggedIn()) changeFragment(new LoanFragment());
+                else login();
+                return true;
             } else if (item.getItemId() == R.id.nav_profile) {
                 if (session.isLoggedIn()) changeFragment(new ProfileFragment());
                 else login();
