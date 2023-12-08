@@ -239,6 +239,12 @@ public class HomeFragment extends Fragment {
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(getContext());
         bottomSheetDialog.setContentView(bb.getRoot());
 
+        bb.textDate.setText(model.getLiveDate());
+        bb.textCurrencyName.setText(model.getLiveCurrencyName());
+        bb.textBuyPrice.setText(model.getLiveBuyPrice());
+        bb.textSellPrice.setText(model.getLiveSellPrice());
+        bb.textQuantity.setText(model.getLiveQuantity());
+
         bb.textLiveTrade.setOnClickListener(v -> {
             bb.textLiveTrade.setBackgroundResource(R.drawable.custom_bg_gains);
             bb.textLiveTrade.setTextColor(getContext().getColor(R.color.white));
@@ -341,6 +347,7 @@ public class HomeFragment extends Fragment {
         map.put("date", getCurrentTimeStamp());
         map.put("amount", amount);
         map.put("type", "Withdraw");
+        map.put("time", String.valueOf(System.currentTimeMillis()));
         map.put("message", "Fund added by " + session.getUserName());
         map.put("status", "PENDING");
         map.put("bankName", bankName);
@@ -382,6 +389,7 @@ public class HomeFragment extends Fragment {
         map.put("date", getCurrentTimeStamp());
         map.put("amount", transactionAmount);
         map.put("type", "Paid");
+        map.put("time", String.valueOf(System.currentTimeMillis()));
         map.put("transactionId", transactionId);
         map.put("message", "Fund added by " + session.getUserName());
         map.put("status", "PENDING");

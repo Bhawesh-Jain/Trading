@@ -6,12 +6,14 @@ public class TransactionModel {
             date,
             amount,
             type,
+            time,
             transactionId,
             message,
             status;
 
     public TransactionModel() {
     }
+
 
     public String getUserId() {
         return userId;

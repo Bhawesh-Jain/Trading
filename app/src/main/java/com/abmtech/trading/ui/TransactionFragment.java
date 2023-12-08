@@ -25,7 +25,10 @@ import com.abmtech.trading.utils.ProgressDialog;
 import com.abmtech.trading.utils.Session;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 
+import java.util.AbstractCollection;
+import java.util.ArrayList;
 import java.util.List;
 
 public class TransactionFragment extends Fragment {
@@ -54,9 +57,9 @@ public class TransactionFragment extends Fragment {
 
     private void getTransaction() {
         pd.show();
-        CollectionReference ref = db.collection("transactions");
 
-        ref.whereEqualTo("userId", session.getUserId())
+        Query query = db.collection("transactions").orderBy("time", Query.Direction.ASCENDING);
+        query
                 .get()
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
@@ -67,8 +70,15 @@ public class TransactionFragment extends Fragment {
                             List<TransactionModel> data = task.getResult().toObjects(TransactionModel.class);
 
                             if (data.size() > 0) {
+
+                                List<TransactionModel> finalList = new ArrayList<>();
+                                for (TransactionModel datum : data) {
+                                    if (datum.getUserId().equals(session.getUserId()))
+                                        finalList.add(datum);
+                                }
+
                                 binding.recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-                                binding.recyclerView.setAdapter(new TransactionAdapter(getContext(), data));
+                                binding.recyclerView.setAdapter(new TransactionAdapter(getContext(), finalList));
                             } else {
                                 Toast.makeText(getContext(), "No transaction found!", Toast.LENGTH_SHORT).show();
                             }

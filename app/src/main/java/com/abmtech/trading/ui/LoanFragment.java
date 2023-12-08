@@ -94,11 +94,11 @@ public class LoanFragment extends Fragment {
         map.put("status", "PENDING");
 
 
-        String id = db.collection("transactions").document().getId();
+        String id = db.collection("withdraw").document().getId();
 
         map.put("id", id);
 
-        DocumentReference userRef = db.collection("transactions").document(id);
+        DocumentReference userRef = db.collection("withdraw").document(id);
 
         userRef.set(map).addOnCompleteListener(task -> {
                     pd.dismiss();

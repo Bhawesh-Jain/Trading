@@ -39,7 +39,7 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
         holder.binding.textTransactionStatus.setText("Status: " + current.getStatus());
         holder.binding.textTransactionDate.setText("Date: " + current.getDate());
 
-        if (current.getType().equals("Paid")) {
+        if (current.getType().equalsIgnoreCase("Paid")) {
             holder.binding.image.setImageResource(R.drawable.ic_top_right_arrow);
         } else {
             holder.binding.image.setImageResource(R.drawable.ic_bottom_left_arrow);
