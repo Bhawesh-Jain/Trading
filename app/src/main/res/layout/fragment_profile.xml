@@ -187,6 +187,7 @@
         </RelativeLayout>
         <RelativeLayout
             android:id="@+id/rl_add_funds"
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
