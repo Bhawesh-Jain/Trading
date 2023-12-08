@@ -13,8 +13,8 @@
         <RelativeLayout
             android:id="@+id/header"
             android:layout_width="match_parent"
-            android:background="@color/white"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@color/white">
 
             <ImageView
                 android:layout_width="@dimen/_80sdp"
@@ -42,6 +42,7 @@
                 android:text="CROSS THE ROAD"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_24ssp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -55,11 +56,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:fontFamily="@font/prompt_regular"
                 android:text="15 Golden Years in Treading"
                 android:textColor="@color/black"
-                android:layout_marginTop="@dimen/_10sdp"
                 android:textSize="@dimen/_12ssp" />
+
             <LinearLayout
                 android:id="@+id/ll_login_redirect"
                 android:layout_width="match_parent"
@@ -72,61 +74,307 @@
                     android:id="@+id/text_login"
                     android:layout_width="@dimen/_180sdp"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/_5sdp"
                     android:layout_marginHorizontal="@dimen/_20sdp"
                     android:layout_weight="1"
                     android:background="@drawable/button_background_empty"
                     android:fontFamily="@font/prompt_regular"
                     android:gravity="center"
                     android:padding="@dimen/_10sdp"
-                    android:layout_margin="@dimen/_5sdp"
-                    android:textStyle="bold"
-                    android:layout_gravity="center"
                     android:text="Login"
                     android:textColor="@color/red"
-                    android:textSize="@dimen/_12ssp" />
+                    android:textSize="@dimen/_12ssp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/text_register"
                     android:layout_width="@dimen/_180sdp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:layout_margin="@dimen/_5sdp"
                     android:layout_marginHorizontal="@dimen/_20sdp"
                     android:layout_weight="1"
                     android:background="@drawable/button_background_blue"
-                    android:layout_margin="@dimen/_5sdp"
                     android:fontFamily="@font/prompt_regular"
                     android:gravity="center"
                     android:padding="@dimen/_10sdp"
                     android:text="Open Account"
-                    android:textStyle="bold"
                     android:textColor="@color/blue"
-                    android:textSize="@dimen/_12ssp" />
+                    android:textSize="@dimen/_12ssp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/ll_investment_dashboard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/top11"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/top_ll1"
-            android:background="#FAFAFA"
-            android:orientation="vertical">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_divider"
+                    app:tint="@color/red" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/prompt_medium"
+                    android:text="Investment Dashboard"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13ssp" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_investment_dashboard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:cardBackgroundColor="@color/bg"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    app:cardElevation="@dimen/_5sdp"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_15sdp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="start"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/prompt_regular"
+                                    android:text="Invested Amount"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_10ssp" />
+
+                                <TextView
+                                    android:id="@+id/text_invested_amount"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/prompt_medium"
+                                    android:text="₹ 40,000"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_13ssp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/prompt_regular"
+                                    android:text="Market Value"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_10ssp" />
+
+                                <TextView
+                                    android:id="@+id/text_market_amount"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/prompt_medium"
+                                    android:text="₹ 40,000"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_13ssp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:background="@drawable/custom_bg_gains"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/_11sdp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="@dimen/_10sdp"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginEnd="@dimen/_2sdp"
+                                        android:src="@drawable/ic_gain_arrow" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/prompt_regular"
+                                        android:text="Overall Gain"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/_9ssp" />
+
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/text_overall_gain"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/text_invested_amount"
+                                    android:fontFamily="@font/prompt_medium"
+                                    android:text="₹40,000 (+7.02%)"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_10ssp" />
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width=".5dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/white" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+
+                                    <ImageView
+                                        android:layout_width="@dimen/_10sdp"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginEnd="@dimen/_2sdp"
+                                        android:src="@drawable/ic_loss_arrow" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/prompt_regular"
+                                        android:text="Today's Loss"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/_9ssp" />
+
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/text_today_loss"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/prompt_medium"
+                                    android:text="-₹251.75(-0.63%)"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_10ssp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_5sdp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/text_withdraw"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginHorizontal="@dimen/_8sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/custom_bg_gains"
+                        android:fontFamily="@font/prompt_regular"
+                        android:gravity="center"
+                        android:padding="@dimen/_10sdp"
+                        android:text="Withdraw"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_11ssp"/>
+
+                    <TextView
+                        android:id="@+id/text_deposit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginHorizontal="@dimen/_8sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/custom_bg_gains"
+                        android:fontFamily="@font/prompt_regular"
+                        android:gravity="center"
+                        android:padding="@dimen/_10sdp"
+                        android:text="Deposit"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_11ssp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/text_all_orders"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="@dimen/_13sdp"
+                    android:layout_marginVertical="@dimen/_8sdp"
+                    android:background="@drawable/custom_bg_gains"
+                    android:fontFamily="@font/prompt_regular"
+                    android:gravity="center"
+                    android:padding="@dimen/_10sdp"
+                    android:text="All Orders"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_11ssp"/>
+
+            </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:fontFamily="@font/prompt_bold"
+                android:layout_marginTop="@dimen/_20sdp"
                 android:text="Advance Your Business"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_22ssp" />
 
             <ImageView
-                android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/_30sdp"
+                android:layout_gravity="center"
                 android:contentDescription="@string/app_name"
                 android:src="@drawable/ic_divider"
                 app:tint="@color/red" />
@@ -136,30 +384,31 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_marginVertical="@dimen/_15sdp"
                 android:fontFamily="@font/prompt_regular"
                 android:gravity="center"
-                android:layout_marginVertical="@dimen/_15sdp"
                 android:text="Algorithmic trading, also known as automated trading, black-box trading, or algo-trading, involves placing a deal using a computer program that adheres to a predetermined set of guidelines Theoretically, the deal can produce profits at a pace and frequency that are beyond the capabilities of a human trader."
                 android:textColor="@color/black"
                 android:textSize="@dimen/_10ssp" />
 
 
-
             <ImageView
-                android:visibility="gone"
                 android:id="@+id/image"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_100sdp"
                 android:layout_marginStart="@dimen/_60sdp"
-                android:src="@drawable/ic_home_banner" />
+                android:src="@drawable/ic_home_banner"
+                android:visibility="gone" />
+
 
         </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/top_ll1"
             android:layout_marginTop="@dimen/_10sdp"
-            android:layout_below="@id/top11"
             android:orientation="vertical">
 
             <TextView
@@ -172,9 +421,9 @@
                 android:textSize="@dimen/_20ssp" />
 
             <ImageView
-                android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/_30sdp"
+                android:layout_gravity="center"
                 android:contentDescription="@string/app_name"
                 android:src="@drawable/ic_divider"
                 app:tint="@color/color_primary" />
@@ -185,19 +434,19 @@
                 android:layout_height="wrap_content" />
 
             <TextView
-                android:layout_marginTop="@dimen/_10sdp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:fontFamily="@font/prompt_medium"
                 android:text="About Us"
                 android:textColor="@color/red"
                 android:textSize="@dimen/_20ssp" />
 
             <ImageView
-                android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/_30sdp"
+                android:layout_gravity="center"
                 android:contentDescription="@string/app_name"
                 android:src="@drawable/ic_divider"
                 app:tint="@color/color_primary" />
@@ -220,19 +469,19 @@
 
 
             <TextView
-                android:layout_marginTop="@dimen/_15sdp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_15sdp"
                 android:fontFamily="@font/prompt_medium"
                 android:text="Services"
                 android:textColor="@color/red"
                 android:textSize="@dimen/_20ssp" />
 
             <ImageView
-                android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/_30sdp"
+                android:layout_gravity="center"
                 android:contentDescription="@string/app_name"
                 android:src="@drawable/ic_divider"
                 app:tint="@color/color_primary" />
@@ -247,16 +496,16 @@
                 android:textSize="@dimen/_12ssp" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:layout_marginTop="@dimen/_10sdp"
                 android:id="@+id/service_recycler"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp" />
 
             <TextView
-                android:layout_marginTop="@dimen/_10sdp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:fontFamily="@font/prompt_medium"
                 android:text="ISO Certified"
                 android:textColor="@color/red"
@@ -264,9 +513,9 @@
 
 
             <ImageView
-                android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/_30sdp"
+                android:layout_gravity="center"
                 android:contentDescription="@string/app_name"
                 android:src="@drawable/ic_divider"
                 app:tint="@color/color_primary" />

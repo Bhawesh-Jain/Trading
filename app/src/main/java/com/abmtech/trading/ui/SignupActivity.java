@@ -150,6 +150,10 @@ public class SignupActivity extends AppCompatActivity {
         map.put("bankName", edtBankName);
         map.put("accountNumber", edtAccNumber);
         map.put("accountHolder", edtAccHolder);
+        map.put("investedAmount", "0");
+        map.put("marketValue", "0");
+        map.put("todayLoss", "0");
+        map.put("overallGain", "0");
         map.put("ifscCode", edtIfscCode);
 
 

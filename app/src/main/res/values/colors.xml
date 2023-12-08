@@ -13,4 +13,6 @@
     <color name="silver">#DEDEDE</color>
     <color name="blue">#2442FF</color>
     <color name="green">#388E3C</color>
+    <color name="bg">#293949</color>
+    <color name="bg_inner">#3A4559</color>
 </resources>
