@@ -141,7 +141,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="ISFC Code "
+            android:text="IFSC Code "
             android:textColor="@color/black"
             android:textSize="@dimen/_10sdp" />
 
@@ -158,7 +158,7 @@
                 android:layout_height="wrap_content"
                 android:background="@null"
                 android:fontFamily="@font/prompt_medium"
-                android:hint="ISFC Code "
+                android:hint="IFSC Code "
                 android:inputType="text"
                 android:padding="@dimen/_10sdp"
                 android:singleLine="true"
