@@ -529,6 +529,17 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/_12ssp" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:textAlignment="center"
+                android:fontFamily="@font/prompt_medium"
+                android:text="Address: G Block,Bandra Kurla Complex, Bandra East, Mumbai, BKC- Bandra (East), Mumbai"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp" />
+
             <ImageView
                 android:id="@+id/ic_certified"
                 android:layout_width="match_parent"
