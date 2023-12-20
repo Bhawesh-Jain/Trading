@@ -77,8 +77,12 @@ public class TransactionFragment extends Fragment {
                                         finalList.add(datum);
                                 }
 
-                                binding.recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-                                binding.recyclerView.setAdapter(new TransactionAdapter(getContext(), finalList));
+                                if (finalList.size() > 0) {
+                                    binding.recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+                                    binding.recyclerView.setAdapter(new TransactionAdapter(getContext(), finalList));
+                                } else {
+                                    Toast.makeText(getContext(), "No transaction found!", Toast.LENGTH_SHORT).show();
+                                }
                             } else {
                                 Toast.makeText(getContext(), "No transaction found!", Toast.LENGTH_SHORT).show();
                             }

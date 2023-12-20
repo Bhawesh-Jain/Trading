@@ -19,5 +19,14 @@
         android:layout_alignParentBottom="true"
         app:menu="@menu/bottom_nav_menu" />
 
+    <ImageView
+        android:id="@+id/image_whatsapp"
+        android:contentDescription="@string/open_whatsapp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="@dimen/_10sdp"
+        android:layout_above="@id/bottom_nav"
+        android:src="@drawable/ic_whatsapp" />
 
 </RelativeLayout>

@@ -62,6 +62,12 @@ public class LoanFragment extends Fragment {
                             data = task.getResult().toObject(LoanModel.class);
 
                             if (data != null) {
+
+                                if (data.getStatus().equals("Accepted")) {
+                                    binding.cardComplete.setOnClickListener(v -> Toast.makeText(getContext(), "Loan Already Accepted!", Toast.LENGTH_SHORT).show());
+                                    binding.textCard.setText("Accepted");
+                                }
+
                                 binding.llLoan.setVisibility(View.VISIBLE);
                                 binding.textEmpty.setVisibility(View.GONE);
                                 binding.textAmount.setText("Loan Amount: " + data.getAmount());
@@ -79,9 +85,13 @@ public class LoanFragment extends Fragment {
     }
 
     private void acceptLoan() {
-        db.collection("loan").document(session.getUserId()).delete();
-
         pd.show();
+
+        Map<String, Object> map1 = new HashMap<>();
+
+        map1.put("status", "Accepted");
+
+        db.collection("loan").document(session.getUserId()).update(map1);
 
         Map<String, Object> map = new HashMap<>();
 
@@ -104,8 +114,8 @@ public class LoanFragment extends Fragment {
                     pd.dismiss();
                     if (task.isSuccessful()) {
                         Toast.makeText(getContext(), "Loan Accepted!", Toast.LENGTH_SHORT).show();
-                        binding.llLoan.setVisibility(View.GONE);
-                        binding.textEmpty.setVisibility(View.VISIBLE);
+                        binding.cardComplete.setOnClickListener(v -> Toast.makeText(getContext(), "Loan Already Accepted!", Toast.LENGTH_SHORT).show());
+                        binding.textCard.setText("Accepted");
                     } else {
                         Toast.makeText(getContext(), "Error! Try Again", Toast.LENGTH_SHORT).show();
                         Log.e("TAG", "Error adding document", task.getException());

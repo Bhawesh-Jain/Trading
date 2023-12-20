@@ -94,9 +94,9 @@ public class HomeFragment extends Fragment {
     }
 
     private void getAllOrder() {
-        CollectionReference ref = db.collection("all_order");
+        CollectionReference ref = db.collection("user_orders");
 
-        ref.document("all_order")
+        ref.document(session.getUserId())
                 .get()
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
